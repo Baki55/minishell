@@ -1,48 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   env.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 13:55:26 by bkhatib           #+#    #+#             */
+/*   Updated: 2022/09/15 15:23:18 by bkhatib          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "builtins.h"
 
-int main(int argc, char **argv, char **envp)
+void	ft_env(char **env)
 {
-	int	i;
-	int j;
+	int	len;
 	char **my_env;
 
-	i = 0;
-	j = 0;
-	while(envp[i])
-		i++;
-	my_env = (char**)malloc(i * sizeof(char*));
-	i = 0;
-	while(envp[i])
-	{
-		my_env[i] = (char*)malloc(255 * sizeof(char));
-		i++;
-	}
-	i = 0;
-	while(envp[i])
-	{
-		while(envp[i][j])
-		{
-			my_env[i][j] = envp[i][j];
-			j++;
-		}
-		my_env[i][j] = '\0';
-		j = 0;
-		i++;
-	}
-	my_env[i] = NULL;
-	i = 0;
-	while(my_env[i])
-	{
-		while(my_env[i][j])
-		{
-			printf("%c", my_env[i][j]);
-			j++;
-		}
-		printf("\n");
-		j = 0;
-		i++;
-	}
-	return (0);
+	len = 0;
+	while(env[len])
+		len++;
+	my_env = malloc_env(my_env, len);
+	my_env = get_env(env, my_env);
+	print_env(my_env);
 }
