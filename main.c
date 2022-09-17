@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:07:05 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/09/15 15:23:25 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/09/17 14:12:36 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	ft_env(envp);
+	printf("%s", ft_pwd());
+	return (0);
 }
