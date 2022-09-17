@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:55:06 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/09/15 14:57:55 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/09/17 11:43:00 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	**get_env(char **env, char **my_env)
 	int	i;
 	int	j;
 	
+	i = 0;
+	j = 0;
 	while(env[i])
 	{
 		while(env[i][j])
